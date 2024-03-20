@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
-login = (By.XPATH,"//*[@id='login']")
-login_btn = (By.XPATH,"//*[@btn']")
-code = (By.XPATH,"//*[@id='code']")
-code_btn = (By.XPATH,"//*[@id='enter']")
+login = (By.XPATH,"//input[@class='form-control']")
+login_btn = (By.XPATH,"//input[@class ='submit']")
+code = (By.XPATH,"//*[@type='password']")
+code_btn = (By.XPATH,"//*[@value='כניסה']")
 phone = "9720546215487"
