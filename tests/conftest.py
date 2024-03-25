@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from utils.webdriver_instence_setup import webdriver_instance
 import pymongo
@@ -8,8 +10,9 @@ from test_data import test_data as TD
 def driver():
     driver = webdriver_instance()
     action = Actions(driver)
-    driver.get("http://test-admin-env.eba-fnn924ys.eu-west-1.elasticbeanstalk.com/#/")
-
+    driver.get("http://test-admin-env.eba-fnn924ys.eu-west-1.elasticbeanstalk.com/")
+    connection_string = "mongodb+srv://qa_agency:!5szveK7%24TE%2493u@cluster0.qnr3p.mongodb.net/"
+    time.sleep(9)
     logic_bar = action.find_element(TD.login)
     logic_bar.send_keys(TD.phone)
 
@@ -17,7 +20,6 @@ def driver():
     logic_btn.click()
     driver.implicitly_wait(5)
 
-    connection_string = "mongodb+srv://qa_agency:!5szveK7%24TE%2493u@cluster0.qnr3p.mongodb.net/"
     client = pymongo.MongoClient(connection_string)
     db = client['trado_qa']
     collection = db['adminusers']
