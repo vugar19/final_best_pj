@@ -1,7 +1,8 @@
-
+import time
 
 def test_1(driver):
-    pass
+    time.sleep(4)
+
 
 
 
