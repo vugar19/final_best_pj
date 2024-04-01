@@ -1,7 +1,7 @@
 import time
 
 
-def test_1(driver):
+def test_LOGIN(driver):
     time.sleep(10)
 
 
