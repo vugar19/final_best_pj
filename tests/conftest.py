@@ -22,7 +22,7 @@ def driver():
     logic_bar = action.find_element(TD.login)
 
     logic_bar.send_keys(Keys.CONTROL + 'a')
-    logic_bar.send_keys(Keys.BACKSPACE)
+    logic_bar.send_keys(Key  s.BACKSPACE)
 
     logic_bar.send_keys(Keys.CONTROL + 'a')
     logic_bar.send_keys(Keys.BACKSPACE)

@@ -25,3 +25,6 @@ final_add_btn = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/input')
 error_message = (By.XPATH,'//*[@class="form_note"]')
 sucsess_mess = (By.XPATH,'//div[@alert=role]')
 export_btn = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div[1]/div[2]/div/div[2]')
+
+search_bar = (By.XPATH,'/div/main/div[2]/div/div[1]/span/span/div/input')
+elements = (By.XPATH,'MSMSMS')
