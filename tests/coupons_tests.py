@@ -144,7 +144,11 @@ def test_4_4(driver,search_value):
     else not pass
 
 
+@pytest.mark.parametrize("name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id",[
+                             (TD.add_form_name,"hello_workd",TD.add_form_code,'123453',TD.add_form_min_cart_val,'100',TD.add_form_start_date,'15/01/2024',TD.add_form_end_date,'26/08/2024',TD.add_form_discount_ammount,'30',TD.add_form_types_shekel)])
 
+def test_4_5(driver):
+    actions = Actions(driver)
 
 
 
