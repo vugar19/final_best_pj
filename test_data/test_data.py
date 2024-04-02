@@ -23,3 +23,4 @@ add_form_types_precen = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/di
 final_add_btn = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/input')
 
 error_message = (By.XPATH,'//*[@class="form_note"]')
+sucsess_mess = (By.XPATH,'//div[@alert=role]')
