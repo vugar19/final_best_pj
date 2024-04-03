@@ -55,6 +55,9 @@ def test_11_5_edit_etrade(driver,edit_id, edit_value):
     row = find_row_by_index(driver, 2)
     row.click()
 
+    update_next_btn = actions.find_element(TD.next_first_btn_etrade)
+    update_next_btn.click()
+
     edit_element = actions.find_element(edit_id)
 
     edit_element.send_keys(Keys.CONTROL + 'a')
@@ -70,6 +73,8 @@ def test_11_5_edit_etrade(driver,edit_id, edit_value):
 
     row = find_row_by_index(driver,2)
     row.click()
+    update_next_btn = actions.find_element(TD.next_first_btn_etrade)
+    update_next_btn.click()
 
     edit_id_default_value = actions.find_element(edit_id).get_attribute('value')
     assert edit_id_default_value == edit_value

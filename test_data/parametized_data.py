@@ -47,7 +47,7 @@ test_11_3_search_etrade_by_values = [
 edit_test_etrade_11_5_keys = "edit_id, edit_value"
 
 edit_test_etrade_11_5_values = [
-    (TD.payment_date, '11111111'),
+    (TD.payment_date, '1111-11-11'),
     (TD.account_number, '156456'),
     (TD.bank_code, '200'),
     (TD.payment_duration, '666')

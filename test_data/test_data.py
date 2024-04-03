@@ -39,7 +39,7 @@ etrade = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/div/nav/div[2]/a[17]')
 etrade_ammount = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div/span/div/input')
 
 next_btn = (By.XPATH,'//input[@value="Next"]')
-submit_etrade_update_btn = (By.XPATH,'//input[@value="Update"]')
+submit_etrade_update_btn = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/input')
 etrade_id = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[1]/span/div/input')
 payment_duration = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[1]/span/div/input')
 account_number = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[3]/span/div/input')
