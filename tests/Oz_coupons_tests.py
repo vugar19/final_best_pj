@@ -55,8 +55,7 @@ def test_4_2_add_invalid(driver,name_id,name_value,code_id,code_value,min_cart_i
 
 
 @pytest.mark.skip
-@pytest.mark.parametrize("name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id",[
-                             (TD.add_form_name,"hello_workd",TD.add_form_code,'123453',TD.add_form_min_cart_val,'100',TD.add_form_start_date,'15/01/2024',TD.add_form_end_date,'26/08/2024',TD.add_form_discount_ammount,'30',TD.add_form_types_shekel)])
+@pytest.mark.parametrize("name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id",PD.test_4_2_add_valid)
 def test_4_2_add_valid(driver,name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id):
     actions = Actions(driver)
     driver.implicitly_wait(5)
@@ -103,32 +102,9 @@ def test_4_2_add_valid(driver,name_id,name_value,code_id,code_value,min_cart_id,
     assert inner_text_success_mess == 'coupon created successfully'
 
 
-@pytest.mark.skip
-def test_4_3_1_export_coupon(driver):
-    actions = Actions(driver)
-    driver.implicitly_wait(5)
-    coupons = actions.find_element(TD.coupon_btn)
-    coupons.click()
-    time.sleep(3)
-    download_directory = 'Downloads'
-    menu = actions.find_element(TD.drop_down_manu)
-    menu.click()
 
-    export_btn = actions.find_element(TD.export_btn)
-    export_btn.click()
-
-    # Get the latest downloaded file
-    list_of_files = os.listdir(download_directory)
-    latest_file = max(list_of_files, key=os.path.getctime)
-
-    # Check the file type
-    file_extension = os.path.splitext(latest_file)[1]
-
-    assert file_extension.lower() == ".csv", "File downloaded successfully but it is not a CSV file."
-
-
-@pytest.mark.parametrize("search_value,attribute",PD.test_4_4_search_by)
-def test_4_4_search_by(driver,search_value,attribute):
+@pytest.mark.parametrize("search_value,xpath,attribute",PD.test_4_4_search_by)
+def test_4_4_search_by(driver,search_value,xpath,attribute):
     actions = Actions(driver)
 
     search_bar = actions.find_element(TD.search_bar)
@@ -136,8 +112,10 @@ def test_4_4_search_by(driver,search_value,attribute):
 
     elements = driver.find_elements(TD.elements)
     for element in elements:
-        element_innertext = element.get_attribute(attribute)
-        assert search_value == element_innertext
+        element.click()
+        element_xpath = element.find_element(By.XPATH,xpath)
+        element_inner_text = element_xpath.get_attribute(attribute)
+        assert search_value == element_inner_text
 
 
 
