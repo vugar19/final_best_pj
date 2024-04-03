@@ -42,14 +42,14 @@ next_btn = (By.XPATH,'//input[@value="Next"]')
 submit_etrade_update_btn = (By.XPATH,'//input[@value="Update"]')
 etrade_id = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[1]/span/div/input')
 payment_duration = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[1]/span/div/input')
-account_number = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[1]/span/div/input')
+account_number = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[3]/span/div/input')
 bank_name = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[4]/div[1]/span[1]/div/input')
 bank_code = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[5]/span/div/input')
 branch = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[6]/span/div/input')
 remarks = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[7]/span/div/input')
 branch = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[7]/span/div/input')
-branch = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[8]/span/div/input')
-
+payment_date = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[8]/span/div/input')
+next_first_btn_etrade = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[5]/input')
 
 
 

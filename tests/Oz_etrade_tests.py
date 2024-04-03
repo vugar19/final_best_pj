@@ -11,7 +11,6 @@ from selenium.webdriver.common.keys import Keys
 
 @pytest.mark.parametrize('search_value,xpath',PD.test_11_3_search_etrade_by_values)
 def test_11_3_search_etrade_by(driver,search_value,xpath):
-
     actions = Actions(driver)
     etrade = actions.find_element(TD.etrade)
     etrade.click()
@@ -33,20 +32,25 @@ def test_11_3_search_etrade_by(driver,search_value,xpath):
                 for row in rows:
                     driver.implicitly_wait(3)
                     row.click()
-                    element_xpath = row.find_element(By.XPATH,xpath)
-                    element_inner_text = element_xpath.get_attribute('defaultValue')
+
+                    update_next_btn = actions.find_element(TD.next_first_btn_etrade)
+                    update_next_btn.click()
+
+                    driver.implicitly_wait(3)
+                    element_text = actions.find_element(xpath)
+                    element_inner_text=element_text.get_attribute('value')
+
                     assert search_value == element_inner_text
         else:
             assert False,'can\'t be found'
 
 
 
-
-@pytest.mark.parametrize()
-def test_4_5_edit_coupon(driver):
+@pytest.mark.parametrize(PD.edit_test_etrade_11_5_keys,PD.edit_test_etrade_11_5_values)
+def test_11_5_edit_etrade(driver,edit_id, edit_value):
     actions = Actions(driver)
-    coupons = actions.find_element(TD.coupons)
-    coupons.click()
+    etrade = actions.find_element(TD.etrade)
+    etrade.click()
 
     row = find_row_by_index(driver, 2)
     row.click()
@@ -55,17 +59,17 @@ def test_4_5_edit_coupon(driver):
 
     edit_element.send_keys(Keys.CONTROL + 'a')
     edit_element.send_keys(Keys.BACKSPACE)
+
     edit_element.send_keys(edit_value)
 
-    submit_btn = actions.find_element(TD.edit_submit_btn)
+    submit_btn = actions.find_element(TD.submit_etrade_update_btn)
+    submit_btn.click()
+    submit_btn.click()
+    submit_btn.click()
     submit_btn.click()
 
     row = find_row_by_index(driver,2)
     row.click()
 
-    edit_id_default_value = actions.find_element(edit_id).get_attribute('defaultValue')
+    edit_id_default_value = actions.find_element(edit_id).get_attribute('value')
     assert edit_id_default_value == edit_value
-
-
-
-
