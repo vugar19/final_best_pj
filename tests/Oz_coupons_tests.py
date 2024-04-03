@@ -9,7 +9,7 @@ from test_data import parametized_data as PD
 from selenium.webdriver.common.keys import Keys
 
 
-@pytest.mark.skip
+
 @pytest.mark.parametrize(PD.test_test_4_2_add_invalid_keys,PD.test_4_2_add_invalid_values)
 def test_4_2_add__coupons_invalid(driver,name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id,validation_message):
     actions = Actions(driver)
@@ -59,7 +59,7 @@ def test_4_2_add__coupons_invalid(driver,name_id,name_value,code_id,code_value,m
     assert validation_text == 'Please fill in this field.'
 
 
-@pytest.mark.skip
+
 @pytest.mark.parametrize(PD.test_4_2_add_valid_keys,PD.test_4_2_add_valid_values)
 def test_4_2_add_coupons_valid(driver,name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id):
     actions = Actions(driver)
