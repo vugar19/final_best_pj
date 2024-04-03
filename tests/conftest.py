@@ -37,7 +37,6 @@ def driver():
     # Perform login actions
     for user in users:
         login_code = user.get("loginCode")
-        print(login_code)
         driver.implicitly_wait(5)
 
         code_bar = action.find_element(TD.code)

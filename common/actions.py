@@ -1,5 +1,19 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from test_data import test_data as TD
+
+
+def find_row_by_index(driver, index):
+    tbodies = driver.find_elements(By.TAG_NAME, 'tbody')
+    for tbody in tbodies:
+        rows = tbody.find_elements(By.TAG_NAME, "tr")
+        for row in rows:
+            if row.get_attribute('rowIndex') == str(index):
+                return row
+
+
+
 
 
 class Actions:
@@ -9,6 +23,7 @@ class Actions:
     def find_element(self,selector):
         element = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(selector))
         return element
+
 
     def click_element(self,element):
         element.click()
@@ -32,5 +47,7 @@ class Actions:
     def input_text(self):
         code = input("Please enter the code: ")
         return code
+
+
 
 
