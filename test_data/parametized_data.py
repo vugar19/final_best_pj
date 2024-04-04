@@ -76,3 +76,12 @@ test_14_5_edit_category_values = [
     (TD.category_department, 'magic'),
     (TD.bank_code, '200'),
     (TD.payment_duration, '666')]
+######################################################################################
+#INFO_PAGES
+######################################################################################
+test_18_3_search_info_pages_keys = "xpath,search_value,attribute"
+test_18_3_search_info_pages_values = [
+    (TD.info_page_title, 'test','defaultValue'),
+    (TD.info_page_category, 'אודות','defaultValue'),
+    (TD.info_page_description, 'test עובד','innerText')]
+

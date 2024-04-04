@@ -1,4 +1,9 @@
 from selenium.webdriver.common.by import By
+
+
+###########################################################################################
+#COUPONS AND LOGIN
+###########################################################################################
 login = (By.XPATH,"//*[@id='root']/div[1]/div[2]/div/span/form/div[1]/div/div[1]/div/input")
 login_btn = (By.XPATH,"//*[@id='root']/div[1]/div[2]/div/span/form/input")
 code = (By.XPATH,"//*[@id='root']/div[1]/div[2]/div/span/form/div[1]/div[1]/span/div/input")
@@ -34,10 +39,11 @@ ending_date = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[5
 discount_value = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[6]/div[1]/div[1]/span/div/input')
 edit_submit_btn = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/input')
 edit_success_message = (By.XPATH,'//*[@id="8tnth7yg7j"]/div[1]')
-##################################################################################
+###########################################################################################
+#ETRADE
+###########################################################################################
 etrade = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/div/nav/div[2]/a[17]')
 etrade_ammount = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div/span/div/input')
-
 next_btn = (By.XPATH,'//input[@value="Next"]')
 submit_etrade_update_btn = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/input')
 etrade_id = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[1]/span/div/input')
@@ -47,13 +53,11 @@ bank_name = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div
 bank_code = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[5]/span/div/input')
 branch = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[6]/span/div/input')
 remarks = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[7]/span/div/input')
-branch = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[7]/span/div/input')
 payment_date = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/div[8]/span/div/input')
 next_first_btn_etrade = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[5]/input')
-
-
-####################################################################################################
-
+###########################################################################################
+#CATEGORY
+###########################################################################################
 category_search = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div[1]/span/span/div/input')
 category_name = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[1]/span/div/input')
 category_department = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[2]/span/div[2]/input')
@@ -65,7 +69,14 @@ category_switch = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/d
 update_category_btn = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/input')
 categories = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/div/nav/div[2]/a[20]')
 category_id = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div[2]/div[1]/table/tbody/tr/td[1]')
-
-
-
+###########################################################################################
+#info_pages
+###########################################################################################
+info_page_title = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div/div[1]/div/label[1]/span/div/input')
+info_page_category = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div/div[1]/div/label[2]/div/span[1]/div/input')
+info_page_description = (By.XPATH,'//*[@id="editor"]')
+info_page_save = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div/div[1]/button')
+info_pages_tab = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/div/nav/div[2]/a[24]')
+info_pages_search = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div/div[1]/span/span/div/input')
+count_findings_info_pages = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div/div[2]/div[2]/div[2]')
 
