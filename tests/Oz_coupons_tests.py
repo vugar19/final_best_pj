@@ -101,8 +101,8 @@ def test_4_2_add_coupons_valid(driver,name_id,name_value,code_id,code_value,min_
     final_add_button = actions.find_element(TD.final_add_btn)
     final_add_button.click()
 
-    sucsess_mess = actions.find_element(TD.sucsess_mess)
-    inner_text_success_mess = sucsess_mess.get_attribute('innerText')
+    success_mess = actions.find_element(TD.success_mess)
+    inner_text_success_mess = success_mess.get_attribute('innerText')
 
     assert inner_text_success_mess == 'coupon created successfully'
 
@@ -131,7 +131,7 @@ def test_4_4_search_by(driver,search_value,xpath):
                 for row in rows:
                     driver.implicitly_wait(3)
                     row.click()
-                    element_xpath = row.find_element(By.XPATH,xpath)
+                    element_xpath = actions.find_element(xpath)
                     element_inner_text = element_xpath.get_attribute('defaultValue')
                     assert search_value == element_inner_text
         else:

@@ -21,7 +21,7 @@ add_form_types_shekel = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/di
 add_form_types_precen = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[6]/div[1]/div[2]/div[1]/span[1]/div[2]/div/div[2]')
 final_add_btn = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/input')
 error_message = (By.XPATH,'//*[@class="form_note"]')
-sucsess_mess = (By.XPATH,'//div[@alert=role]')
+success_mess = (By.XPATH,'//div[@alert=role]')
 export_btn = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div[1]/div[2]/div/div[2]')
 search_bar = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div[1]/span/span/div/input')
 elements = By.CSS_SELECTOR,'#root > div:nth-child(1) > div.pages_pages > main > div.pages_children > div > div.table_tableScroll > div.table_table > table > tbody > tr:nth-child'
@@ -52,16 +52,19 @@ payment_date = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[3]/
 next_first_btn_etrade = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/div/form/div[5]/input')
 
 
+####################################################################################################
 
-
-
-
-
-
-
-
-
-
+category_search = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div[1]/span/span/div/input')
+category_name = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[1]/span/div/input')
+category_department = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[2]/span/div[2]/input')
+category_field_name = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[6]/div[1]/div[1]/span/div/input')
+category_field_type = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[6]/div[1]/div[2]/div[1]/span[1]/div/input')
+category_text = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[6]/div[1]/div[2]/div[1]/span[1]/div[2]/div/div[1]')
+category_number = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[6]/div[1]/div[2]/div[1]/span[1]/div[2]/div/div[2]')
+category_switch = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/div[1]/div[6]/div[1]/div[2]/div[1]/span[1]/div[2]/div/div[3]')
+update_category_btn = (By.XPATH,'//*[@id="root"]/div[1]/div[4]/div/div/form/input')
+categories = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/div/nav/div[2]/a[20]')
+category_id = (By.XPATH,'//*[@id="root"]/div[1]/div[2]/main/div[2]/div/div[2]/div[1]/table/tbody/tr/td[1]')
 
 
 

@@ -5,13 +5,13 @@ from test_data import test_data as TD
 ###################################################################################
 test_4_4_search_by_keys = "search_value,xpath"
 test_4_4_search_by_values = [
-                    ("hello",TD.coupon_name),
+                    ("not hello",TD.coupon_name),
                     ("אללין אצנף",TD.coupon_name),
                     ("@",TD.coupon_name),
                     ('12345',TD.coupon_code),
                     ('100',TD.min_cart_value),
                     ('2024-12-01',TD.starting_date),
-                    ('30',TD.discount_value)]
+                    ('28',TD.discount_value)]
 test_test_4_2_add_invalid_keys = "name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id,validation_message"
 
 test_4_2_add_invalid_values = [
@@ -59,10 +59,20 @@ edit_test_etrade_11_5_values = [
 ###################################################################################
 # CATEGORY
 ###################################################################################
-test_14_3_search_category_keys = "search_value,xpath"
+test_14_3_search_category_keys = "search_value,xpath,search_id"
 
 test_14_3_search_category_values = [
-                    ("300",TD.etrade_ammount),
-                    ('123456',TD.account_number),
-                    ('1111-11-11',TD.payment_date),
-                    ('6',TD.payment_duration)]
+                    ('120j4k614lubo1b1g',TD.category_id,1),
+                    ("import",TD.category_name,0),
+                    ('cloth',TD.category_department,0),
+                    ('u6z3r13kkkv9d4hw',TD.category_id,1)
+
+]
+
+
+test_14_5_edit_category_keys = "edit_id, edit_value"
+test_14_5_edit_category_values = [
+    (TD.category_name, 'mario test'),
+    (TD.category_department, 'magic'),
+    (TD.bank_code, '200'),
+    (TD.payment_duration, '666')]
