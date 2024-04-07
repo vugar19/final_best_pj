@@ -95,4 +95,5 @@ count_findings_info_pages = (By.XPATH, '//*[@id="root"]/div[1]/div[2]/main/div[2
 users_btn = (By.XPATH, "//*[@id='root']/div[1]/div[2]/div[1]/nav[1]/div[2]/a[22]")
 add_form_phone = (By.XPATH, "//*[@id='root']/div[1]/div[4]/div[1]/div[1]/form[1]/div[1]/div[6]/div[1]/div[1]/input")
 add_form_shops = (By.XPATH, "//*[@id='root']/div[1]/div[4]/div[1]/div[1]/form[1]/div[1]/div[9]/span[1]/div[2]/input")
+autocomplete_option = (By.XPATH, "//*[@id='root']/div[1]/div[4]/div[1]/div[1]/form[1]/div[1]/div[9]/span[1]/div[3]/div[1]/div[1]")
 success_message = (By.XPATH, '//div[@alert=role]')

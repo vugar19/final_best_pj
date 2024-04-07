@@ -27,6 +27,9 @@ def test_add_new_user(driver, phone_number_id, shops_id, phone_number_value, sho
     shops_field = actions.find_element(shops_id)
     shops_field.send_keys(shops_value)
 
+    autocomplete_option_select = actions.find_element(TD.autocomplete_option)
+    autocomplete_option_select.click()
+
     final_add_button = actions.find_element(TD.final_add_btn)
     final_add_button.click()
 
