@@ -135,7 +135,7 @@ def test_4_4_search_by(driver,search_value,xpath):
                     element_inner_text = element_xpath.get_attribute('defaultValue')
                     assert search_value == element_inner_text
         else:
-            assert False,'can\'t be found'
+            assert False,'cant be found'
 
 
 
