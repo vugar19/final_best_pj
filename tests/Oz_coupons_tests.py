@@ -1,23 +1,15 @@
-import re
 import time
-from common.actions import *
-from selenium.webdriver.common.by import By
 import pytest
-from common.actions import Actions
-from test_data import test_data as TD
 from test_data import parametized_data as PD
+from common.actions import *
 from selenium.webdriver.common.keys import Keys
 
-
-
 @pytest.mark.parametrize(PD.test_test_4_2_add_invalid_keys,PD.test_4_2_add_invalid_values)
-def test_4_2_add__coupons_invalid(driver,name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id,validation_message):
+def test_4_2_add_invalid(driver,name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id,validation_message):
     actions = Actions(driver)
     driver.implicitly_wait(5)
-
     coupons = actions.find_element(TD.coupon_btn)
     coupons.click()
-
     time.sleep(3)
 
     menu = actions.find_element(TD.drop_down_manu)
@@ -61,7 +53,7 @@ def test_4_2_add__coupons_invalid(driver,name_id,name_value,code_id,code_value,m
 
 
 @pytest.mark.parametrize(PD.test_4_2_add_valid_keys,PD.test_4_2_add_valid_values)
-def test_4_2_add_coupons_valid(driver,name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id):
+def test_4_2_add_valid(driver,name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id):
     actions = Actions(driver)
     driver.implicitly_wait(5)
     coupons = actions.find_element(TD.coupon_btn)
@@ -101,49 +93,35 @@ def test_4_2_add_coupons_valid(driver,name_id,name_value,code_id,code_value,min_
     final_add_button = actions.find_element(TD.final_add_btn)
     final_add_button.click()
 
-    success_mess = actions.find_element(TD.success_mess)
-    inner_text_success_mess = success_mess.get_attribute('innerText')
+    sucsess_mess = actions.find_element(TD.sucsess_mess)
+    inner_text_success_mess = sucsess_mess.get_attribute('innerText')
 
     assert inner_text_success_mess == 'coupon created successfully'
 
 
 
 @pytest.mark.parametrize(PD.test_4_4_search_by_keys,PD.test_4_4_search_by_values)
-def test_4_4_search_by(driver,search_value,xpath):
+def test_4_4_search_by(driver,search_value,xpath,attribute):
     actions = Actions(driver)
-    coupons = actions.find_element(TD.coupons)
+    coupons = actions.find_element(TD.coupon_btn)
     coupons.click()
-
     search_bar = actions.find_element(TD.search_bar)
     search_bar.send_keys(search_value)
-    time.sleep(3)
 
-    count_findings = actions.find_element(TD.count_findings).get_attribute('innerText')
-    count_findings_number = re.search(r'\d+', count_findings)
-    if count_findings_number:
-
-        count_findings_number = int(count_findings_number.group())
-        if count_findings_number > 0:
-
-            tbodies = driver.find_elements(By.TAG_NAME,'tbody')
-            for tbody in tbodies:
-                rows = tbody.find_elements(By.TAG_NAME,"tr")
-                for row in rows:
-                    driver.implicitly_wait(3)
-                    row.click()
-                    element_xpath = actions.find_element(xpath)
-                    element_inner_text = element_xpath.get_attribute('defaultValue')
-                    assert search_value == element_inner_text
-        else:
-            assert False,'cant be found'
+    elements = driver.find_elements(TD.elements)
+    for element in elements:
+        element.click()
+        element_xpath = element.find_element(By.XPATH,xpath)
+        element_inner_text = element_xpath.get_attribute(attribute)
+        assert search_value == element_inner_text
 
 
 
 
-@pytest.mark.parametrize(PD.edit_test_4_5_keys, PD.edit_test_4_5_values)
-def test_4_5_edit_coupon(driver, edit_id, edit_value):
+@pytest.mark.parametrize(PD.edit_test_4_5_keys,PD.edit_test_4_5_values)
+def test_4_5_edit_coupon(driver,edit_id,edit_value):
     actions = Actions(driver)
-    coupons = actions.find_element(TD.coupons)
+    coupons = actions.find_element(TD.coupon_btn)
     coupons.click()
 
     row = find_row_by_index(driver, 2)
@@ -153,6 +131,7 @@ def test_4_5_edit_coupon(driver, edit_id, edit_value):
 
     edit_element.send_keys(Keys.CONTROL + 'a')
     edit_element.send_keys(Keys.BACKSPACE)
+
     edit_element.send_keys(edit_value)
 
     submit_btn = actions.find_element(TD.edit_submit_btn)
@@ -161,9 +140,8 @@ def test_4_5_edit_coupon(driver, edit_id, edit_value):
     row = find_row_by_index(driver,2)
     row.click()
 
-    edit_id_default_value = actions.find_element(edit_id).get_attribute('defaultValue')
+    edit_id_default_value = actions.find_element(edit_id).get_attribute('value')
     assert edit_id_default_value == edit_value
-
 
 
 

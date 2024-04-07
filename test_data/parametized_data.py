@@ -3,15 +3,15 @@ from test_data import test_data as TD
 ###################################################################################
 # COUPONS
 ###################################################################################
-test_4_4_search_by_keys = "search_value,xpath"
+test_4_4_search_by_keys = "search_value,xpath,attribute"
 test_4_4_search_by_values = [
-                    ("not hello",TD.coupon_name),
-                    ("אללין אצנף",TD.coupon_name),
-                    ("@",TD.coupon_name),
-                    ('12345',TD.coupon_code),
-                    ('100',TD.min_cart_value),
-                    ('2024-12-01',TD.starting_date),
-                    ('28',TD.discount_value)]
+                    ("not hello",TD.coupon_name,'innerText'),
+                    ("אללין אצנף",TD.coupon_name,'innerText'),
+                    ("@",TD.coupon_name,'innerText'),
+                    ('12345',TD.coupon_code,'innerText'),
+                    ('100',TD.min_cart_value,'innerText'),
+                    ('2024-12-01',TD.starting_date,'innerText'),
+                    ('28',TD.discount_value,'innerText')]
 test_test_4_2_add_invalid_keys = "name_id,name_value,code_id,code_value,min_cart_id,min_cart_value,start_date_id ,start_date_value, end_date_id,end_date_value, discount_amount_id,discount_amount_value,discount_type_id,validation_message"
 
 test_4_2_add_invalid_values = [

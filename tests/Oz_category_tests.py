@@ -48,7 +48,7 @@ def test_14_3_search_category(driver, search_value, xpath, search_id):
                 assert False, 'cant be found'
 
 
-@pytest.mark.parametrize(PD.edit_test_4_5_keys, PD.edit_test_4_5_values)
+@pytest.mark.parametrize(PD.test_14_5_edit_category_keys, PD.test_14_5_edit_category_keys)
 def test_14_5_edit_category(driver, edit_id, edit_value):
     actions = Actions(driver)
     coupons = actions.find_element(TD.coupons)
