@@ -87,9 +87,13 @@ test_18_3_search_info_pages_values = [
 ######################################################################################
 #USERS
 ######################################################################################
+import random
+
+# Generate a string of 10 random numbers
+random_numbers = ''.join(random.choices('0123456789', k=10))
 test_add_new_user_keys = "phone_number_id, phone_number_value, shops_id, shops_value"
 
 test_add_new_user_values = [
-                             (TD.add_form_phone, '0541111102', TD.add_form_shops, 'test')]
+                             (TD.add_form_phone, random_numbers, TD.add_form_shops, 'test')]
 
 
