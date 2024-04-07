@@ -84,4 +84,12 @@ test_18_3_search_info_pages_values = [
     (TD.info_page_title, 'test','defaultValue'),
     (TD.info_page_category, 'אודות','defaultValue'),
     (TD.info_page_description, 'test עובד','innerText')]
+######################################################################################
+#USERS
+######################################################################################
+test_add_new_user_keys = "phone_number_id, phone_number_value, shops_id, shops_value"
+
+test_add_new_user_values = [
+                             (TD.add_form_phone, '0541111102', TD.add_form_shops, 'test')]
+
 
