@@ -91,12 +91,10 @@ import random
 random_numbers = ''.join(random.choices('0123456789', k=10))
 
 test_add_new_user_keys = "phone_number_id, phone_number_value, shops_id, shops_value"
-
 test_add_new_user_values = [
                              (TD.add_form_phone, random_numbers, TD.add_form_shops, 'test')]
 
 test_try_invalid_new_user_keys = "phone_number_id, phone_number_value, shops_id, shops_value"
-
 test_try_invalid_new_user_values = [
                              (TD.add_form_phone, '054111', TD.add_form_shops, 'test')]
 
@@ -105,3 +103,12 @@ test_search_by_user_values = [
                     ("דסטאו", TD.first_name, 'innerText'),
                     ("להלה", TD.first_name, 'innerText'),
                     ("גדדגבד", TD.first_name, 'innerText')]
+
+edit_user_keys = "edit_id, edit_value"
+edit_user_values = [
+    (TD.first_name, 'Jessica'),
+    (TD.first_name, 'Sandra'),
+    (TD.first_name, 'Vugar')]
+######################################################################################
+#SYSTEM_USERS
+######################################################################################
