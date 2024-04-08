@@ -48,7 +48,7 @@ def test_4_2_add_invalid(driver,name_id,name_value,code_id,code_value,min_cart_i
     validation = actions.find_element(validation_message)
     validation_text = validation.get_attribute('validationMessage')
 
-    assert validation_text == 'Please fill in this field.'
+    assert validation_text == 'מס׳ טלפון לא תקין'
 
 
 

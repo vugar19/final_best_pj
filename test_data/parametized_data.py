@@ -95,4 +95,13 @@ test_add_new_user_keys = "phone_number_id, phone_number_value, shops_id, shops_v
 test_add_new_user_values = [
                              (TD.add_form_phone, random_numbers, TD.add_form_shops, 'test')]
 
+test_try_invalid_new_user_keys = "phone_number_id, phone_number_value, shops_id, shops_value"
 
+test_try_invalid_new_user_values = [
+                             (TD.add_form_phone, '054111', TD.add_form_shops, 'test')]
+
+test_search_by_user_keys = "search_value,xpath,attribute"
+test_search_by_user_values = [
+                    ("דסטאו", TD.first_name, 'innerText'),
+                    ("להלה", TD.first_name, 'innerText'),
+                    ("גדדגבד", TD.first_name, 'innerText')]

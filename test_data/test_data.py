@@ -97,3 +97,4 @@ add_form_phone = (By.XPATH, "//*[@id='root']/div[1]/div[4]/div[1]/div[1]/form[1]
 add_form_shops = (By.XPATH, "//*[@id='root']/div[1]/div[4]/div[1]/div[1]/form[1]/div[1]/div[9]/span[1]/div[2]/input")
 autocomplete_option = (By.XPATH, "//*[@id='root']/div[1]/div[4]/div[1]/div[1]/form[1]/div[1]/div[9]/span[1]/div[3]/div[1]/div[1]")
 success_message = (By.XPATH, '//div[@alert=role]')
+first_name = (By.XPATH, '//tbody/tr[16]/td[1]')
